@@ -1,0 +1,31 @@
+name: CobbleTip
+main: com.polaris.cobbletip.CobbleTipPlugin
+version: 1.0.0
+api-version: "1.20"
+depend: [CobbleCore]
+
+commands:
+  ctp:
+    usage: /ctp <world> <x> <y> <z>
+    description: Teleport to a tracked location.
+  cobbletip:
+    usage: /cobbletip reload
+    description: CobbleTip admin command.
+
+permissions:
+  cobbletip.admin:
+    default: op
+  cobbletip.protect.bypass:
+    default: op
+  cobbletip.tp:
+    default: true
+  cobbletip.teleport:
+    default: true
+  cobbletip.teleport.bypass:
+    default: op
+  cobbletip.teleport.free:
+    default: op
+  cobbletip.partyview:
+    default: true
+  cobbletip.partyview.bypass:
+    default: op

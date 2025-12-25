@@ -1,0 +1,65 @@
+debug: false
+
+announce:
+  enabled: true
+  # 触发公告的生成来源（按 CobbleCore 的 SpawnSource 枚举名）
+  sources:
+    - BAIT
+    - BOBBER
+    - COMMAND
+    - OTHER
+  # 只公告包含以下 labels 的物种（Cobblemon species 的 labels），留空表示不限制
+  # 常用：legendary（神兽）/ mythical（幻兽）/ ultra_beast（异兽）
+  onlyLabels:
+    - legendary
+    - mythical
+    - ultra_beast
+  # 如果 species 在这里，就一定公告（可为空）
+  forceSpecies: []
+  # 如果 species 在这里，就绝不公告（可为空）
+  blockSpecies: []
+
+protection:
+  enabled: true
+  durationSeconds: 600
+  deny:
+    attack: true
+    interact: true
+    fish: true
+  messageCooldownMs: 1200
+
+teleport:
+  enabled: true
+  cooldownSeconds: 3
+  requirePermission: true
+  trackedOnly: true
+  economy:
+    enabled: true
+    cost: 100.0
+
+partyView:
+  enabled: true
+  requireSneak: true
+  size: 54
+
+messages:
+  prefix: "&8[&aCobbleTip&8] "
+  announce:
+    - "{prefix}&6发现 &e{species}{sourcePart}"
+    - "{prefix}&7附近玩家: &f{nearby}"
+    - "{prefix}&7世界: &f{world} &8| &7坐标: &f{x}&7,&f{y}&7,&f{z}"
+  clickLine: "{prefix}&a[点击传送] &7→ &f{world} &7(&f{x}&7,&f{y}&7,&f{z}&7)"
+  clickHover: "&e点击传送\n&7世界: &f{world}\n&7坐标: &f{x} {y} {z}"
+  clickText: "&a[点击传送]"
+  teleportSuccess: "{prefix}&a已传送。"
+  teleportCooldown: "{prefix}&e请等待 &f{seconds}&es 后再传送。"
+  teleportNoMoney: "{prefix}&c余额不足，需要 &f{cost}&c。"
+  entityNotFound: "{prefix}&c目标已消失。"
+  notTracked: "{prefix}&c该目标已过期或未记录。"
+  protectDeniedAttack: "{prefix}&c该宝可梦处于保护中，无法攻击。"
+  protectDeniedInteract: "{prefix}&c该宝可梦处于保护中，无法交互。"
+  protectDeniedFish: "{prefix}&c该宝可梦处于保护中，无法钓起。"
+  protectExpired: "{prefix}&a{species} 的保护已解除。"
+  noPermission: "{prefix}&c你没有权限。"
+  reloaded: "{prefix}&a配置已重载。"
+  partyViewEmpty: "{prefix}&e该玩家队伍为空或未加载。"
